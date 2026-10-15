@@ -1,0 +1,126 @@
+@import "tailwindcss";
+
+:root {
+  --color-primary-navy: #123A63;
+  --color-deep-navy: #071A2F;
+  --color-dark-bg: #061426;
+  --color-cyan-brand: #35C6E8;
+  --color-teal-brand: #38D6B0;
+  --color-light-bg: #F3F7FB;
+  --color-primary-text: #172B43;
+}
+
+@theme {
+  --color-navy-primary: #123A63;
+  --color-navy-deep: #071A2F;
+  --color-navy-dark: #061426;
+  --color-brand-cyan: #35C6E8;
+  --color-brand-teal: #38D6B0;
+  --color-surface-light: #F3F7FB;
+  --color-text-main: #172B43;
+}
+
+html {
+  scroll-behavior: smooth;
+  color-scheme: light dark;
+}
+
+body {
+  background-color: #F3F7FB;
+  color: #172B43;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+/* Subtle circuit pattern background */
+.cyber-circuit-bg {
+  background-color: #061426;
+  background-image: 
+    radial-gradient(circle at 50% 20%, rgba(53, 198, 232, 0.12) 0%, transparent 60%),
+    linear-gradient(rgba(53, 198, 232, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(53, 198, 232, 0.04) 1px, transparent 1px);
+  background-size: 100% 100%, 48px 48px, 48px 48px;
+  background-position: center, 0 0, 0 0;
+}
+
+.cyber-grid-light {
+  background-image: 
+    linear-gradient(rgba(18, 58, 99, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(18, 58, 99, 0.04) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+/* Cyan lighting glow effect */
+.glow-cyan {
+  box-shadow: 0 0 40px -10px rgba(53, 198, 232, 0.35);
+}
+
+.glow-teal {
+  box-shadow: 0 0 35px -10px rgba(56, 214, 176, 0.35);
+}
+
+.glow-border {
+  border-color: rgba(53, 198, 232, 0.4);
+}
+
+.glow-border:hover {
+  border-color: rgba(53, 198, 232, 0.8);
+  box-shadow: 0 0 25px -5px rgba(53, 198, 232, 0.3);
+}
+
+/* Glassmorphism card for dark mode */
+.cyber-card-dark {
+  background: rgba(7, 26, 47, 0.85);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(53, 198, 232, 0.18);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.cyber-card-dark:hover {
+  border-color: rgba(53, 198, 232, 0.45);
+  transform: translateY(-3px);
+  box-shadow: 0 16px 36px -10px rgba(6, 20, 38, 0.8), 0 0 20px -5px rgba(53, 198, 232, 0.2);
+}
+
+/* Crisp light card */
+.cyber-card-light {
+  background: #ffffff;
+  border: 1px solid rgba(18, 58, 99, 0.08);
+  box-shadow: 0 4px 20px -4px rgba(7, 26, 47, 0.06);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.cyber-card-light:hover {
+  border-color: rgba(53, 198, 232, 0.5);
+  transform: translateY(-4px);
+  box-shadow: 0 16px 32px -8px rgba(18, 58, 99, 0.12);
+}
+
+/* Badge styling */
+.cyber-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 0.85rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  border-radius: 9999px;
+  background: rgba(53, 198, 232, 0.12);
+  color: #35C6E8;
+  border: 1px solid rgba(53, 198, 232, 0.25);
+}
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
